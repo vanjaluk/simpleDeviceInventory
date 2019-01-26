@@ -1,0 +1,1 @@
+# simpleDeviceInventory
