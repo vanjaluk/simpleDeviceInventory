@@ -1,1 +1,1 @@
-##Simple Device Inventory
+Simple Device Inventory
