@@ -43,7 +43,7 @@ public class Controller {
         dialog.initOwner(mainPanel.getScene().getWindow());
         dialog.setTitle("Add New Device");
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("devicedialog.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("fxml/devicedialog.fxml"));
         if (loadDialog(dialog, fxmlLoader)) return;
 
         dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
@@ -86,7 +86,7 @@ public class Controller {
         dialog.initOwner(mainPanel.getScene().getWindow());
         dialog.setTitle("Edit Device");
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("devicedialog.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("fxml/devicedialog.fxml"));
         try {
             dialog.getDialogPane().setContent(fxmlLoader.load());
         } catch (IOException e) {

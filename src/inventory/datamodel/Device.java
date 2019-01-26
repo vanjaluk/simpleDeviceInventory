@@ -18,18 +18,20 @@ public class Device {
     private SimpleStringProperty deviceIpAddress = new SimpleStringProperty("");
     private SimpleStringProperty deviceSoftwareVersion = new SimpleStringProperty("");
     private SimpleStringProperty deviceLocation = new SimpleStringProperty("");
+    private SimpleStringProperty dateInserted = new SimpleStringProperty();
 
     public Device(){
 
     }
 
-    public Device(String deviceName, String deviceVendor, String deviceSerialNumber, String deviceIpAddress, String deviceSoftwareVersion,String deviceLocation) {
+    public Device(String deviceName, String deviceVendor, String deviceSerialNumber, String deviceIpAddress, String deviceSoftwareVersion, String deviceLocation, LocalDate dateInserted) {
         this.deviceName.set(deviceName);
         this.deviceVendor.set(deviceVendor);
         this.deviceSerialNumber.set(deviceSerialNumber);
         this.deviceIpAddress.set(deviceIpAddress);
         this.deviceSoftwareVersion.set(deviceSoftwareVersion);
         this.deviceLocation.set(deviceLocation);
+        this.dateInserted.set(String.valueOf(dateInserted));
     }
 
     public String getDeviceName() {
@@ -104,6 +106,19 @@ public class Device {
         this.deviceLocation.set(deviceLocation);
     }
 
+
+    public String getDateInserted() {
+        return dateInserted.get();
+    }
+
+    public SimpleStringProperty dateInsertedProperty() {
+        return dateInserted;
+    }
+
+    public void setDateInserted(String dateInserted) {
+        this.dateInserted.set(dateInserted);
+    }
+
     @Override
     public String toString() {
         return "Device{" +
@@ -113,9 +128,12 @@ public class Device {
                 ", deviceIpAddress=" + deviceIpAddress +
                 ", deviceSoftwareVersion=" + deviceSoftwareVersion +
                 ", deviceLocation=" + deviceLocation +
+                ", dateInserted=" + dateInserted +
                 '}';
     }
-//
+
+
+    //
 //    private static final Pattern PATTERN = Pattern.compile(
 //            "^(([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$");
 //

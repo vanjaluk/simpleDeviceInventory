@@ -37,6 +37,7 @@ public class DeviceData {
     private static final String IP_ADDRESS = "ip_address";
     private static final String SOFTWARE_VERSION = "software_version";
     private static final String DEVICE_LOCATION = "device_location";
+    private static final String DATE_INSERTED = "date_inserted";
 
     private ObservableList<Device> devices;
 
@@ -121,6 +122,13 @@ public class DeviceData {
                         continue;
                     }
 
+                    if (event.asStartElement().getName().getLocalPart()
+                            .equals(DATE_INSERTED)) {
+                        event = eventReader.nextEvent();
+                        device.setDateInserted(event.asCharacters().getData());
+                        continue;
+                    }
+
                 }
                 // If we reach the end of a device element, we add it to the list
                 if (event.isEndElement()) {
@@ -196,6 +204,7 @@ public class DeviceData {
         createNode(eventWriter, IP_ADDRESS, device.getDeviceIpAddress());
         createNode(eventWriter, SOFTWARE_VERSION, device.getDeviceSoftwareVersion());
         createNode(eventWriter, DEVICE_LOCATION, device.getDeviceLocation());
+        createNode(eventWriter, DATE_INSERTED, device.getDateInserted());
 
         eventWriter.add(eventFactory.createEndElement("", "", DEVICE));
         eventWriter.add(end);

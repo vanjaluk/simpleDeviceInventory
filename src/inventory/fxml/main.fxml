@@ -59,6 +59,12 @@
                         <PropertyValueFactory property="deviceLocation" />
                     </cellValueFactory>
                 </TableColumn>
+                <TableColumn maxWidth="200.0" prefWidth="200.0" text="Date Inserted">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dateInserted" />
+                    </cellValueFactory>
+                </TableColumn>
+
             </columns>
         </TableView>
     </center>

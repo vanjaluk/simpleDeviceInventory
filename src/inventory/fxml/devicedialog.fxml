@@ -41,7 +41,10 @@
 
             <Label text="Device Location: " GridPane.columnIndex="0" GridPane.rowIndex="6" />
             <TextField fx:id="deviceLocationField" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-         <columnConstraints>
+
+            <Label text="Date Inserted: " GridPane.columnIndex="0" GridPane.rowIndex="7" />
+            <DatePicker fx:id="dateInsertedField" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <columnConstraints>
             <ColumnConstraints maxWidth="180.0" minWidth="130.0" prefWidth="175.0" />
             <ColumnConstraints />
          </columnConstraints>
